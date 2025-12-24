@@ -3,119 +3,117 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>中文考试成绩在线验证结果查询（DEMO）</title>
+  <title>中文考试成绩在线验证结果查询</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-  <div class="watermark">DEMO / 非官方</div>
 
   <div class="page">
     <header class="header">
       <h1>中文考试成绩在线验证结果查询</h1>
       <p class="sub">汉考国际教育科技（北京）有限公司（CTI）</p>
-      <p class="sub danger">本网站为课程项目演示（DEMO），不代表任何官方成绩验证结果。</p>
     </header>
 
-    <!-- SEARCH BAR (demo) -->
-    <section class="search-card">
-      <div class="search-title">Demo Search</div>
-      <div class="search-row">
-        <label for="ticketInput">Ticket No.</label>
-        <input id="ticketInput" type="text" placeholder="e.g. DEMO-HSK5-0001" />
-        <button id="searchBtn">Search</button>
-      </div>
-      <div class="hint">Try: <b>DEMO-HSK5-0001</b> or <b>DEMO-HSK5-0002</b></div>
-      <div id="msg" class="msg"></div>
-    </section>
+    <main class="panel">
 
-    <main class="card" id="resultCard" style="display:none;">
-      <div class="card-head">
-        <div class="section-title">Information of test taker</div>
-      </div>
+      <div class="panel-title">Information of test taker</div>
 
       <div class="top-grid">
-        <div class="tables">
-          <table class="info-table">
-            <tr><th>Name on Certificate</th><td id="name">-</td></tr>
-            <tr><th>Chinese Name</th><td id="cnname">-</td></tr>
-            <tr><th>Nationality</th><td id="nation">-</td></tr>
-            <tr><th>Gender</th><td id="gender">-</td></tr>
-          </table>
-
-          <div class="info-divider"><span>考试信息</span></div>
+        <div class="left">
 
           <table class="info-table">
-            <tr><th>考点名称</th><td id="center">-</td></tr>
-            <tr><th>Ticket No.</th><td id="ticket">-</td></tr>
-            <tr><th>证书编号</th><td id="certno">-</td></tr>
-            <tr><th>Test Type</th><td id="type">-</td></tr>
-            <tr><th>Test Time</th><td id="time">-</td></tr>
+            <tr>
+              <th>Name on Certificate</th>
+              <td>AL AMIN HOSSAIN RAHAT</td>
+            </tr>
+            <tr>
+              <th>Chinese Name</th>
+              <td>拉哈特</td>
+            </tr>
+            <tr>
+              <th>Nationality</th>
+              <td>Bangladesh</td>
+            </tr>
+            <tr>
+              <th>Gender</th>
+              <td>Male</td>
+            </tr>
           </table>
+
+          <div class="divider-label">考试信息</div>
+
+          <table class="info-table">
+            <tr>
+              <th>考点名称</th>
+              <td>Beijing (Demo Center)</td>
+            </tr>
+            <tr>
+              <th>Ticket No.</th>
+              <td>H5XXXXXXXXXXXXXX</td>
+            </tr>
+            <tr>
+              <th>证书编号</th>
+              <td>H5XXXXXXXXXX</td>
+            </tr>
+            <tr>
+              <th>Test Type</th>
+              <td>HSK五级</td>
+            </tr>
+            <tr>
+              <th>Test Time</th>
+              <td>Dec 23, 2025</td>
+            </tr>
+          </table>
+
         </div>
 
-        <div class="photo-col">
-          <div class="photo-wrap">
-            <img id="photo" src="photo.jpg" alt="Photo" />
+        <div class="right">
+          <div class="photo-box">
+            <img src="photo.jpg" alt="photo" />
           </div>
         </div>
       </div>
 
-      <div class="divider"></div>
+      <div class="section-gap"></div>
 
-      <div class="score-block">
-        <div class="block-title" id="hskTitle">HSK（Demo）中文水平考试</div>
-        <table class="score-table">
-          <thead>
-            <tr>
-              <th>听力</th>
-              <th>阅读</th>
-              <th>写作</th>
-              <th>Total Score</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td id="l">-</td>
-              <td id="r">-</td>
-              <td id="w">-</td>
-              <td class="total" id="total">-</td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="score-title">HSK五级（Demo）中文水平考试</div>
+      <table class="score-table">
+        <tr>
+          <th>听力</th>
+          <th>阅读</th>
+          <th>写作</th>
+          <th>Total Score</th>
+        </tr>
+        <tr>
+          <td>70</td>
+          <td>80</td>
+          <td>75</td>
+          <td class="bold">225</td>
+        </tr>
+      </table>
+
+      <div class="section-gap"></div>
+
+      <div class="score-title">HSKK（高级）（Demo）中文水平考试</div>
+      <table class="score-table">
+        <tr>
+          <th>口试</th>
+          <th>Total Score</th>
+          <th>Status</th>
+        </tr>
+        <tr>
+          <td>60</td>
+          <td class="bold">60</td>
+          <td>合格</td>
+        </tr>
+      </table>
+
+      <div class="footer">
+        <div class="small-note">课程项目页面（Demo）</div>
       </div>
 
-      <div class="gap-lg"></div>
-
-      <div class="score-block">
-        <div class="block-title" id="hskkTitle">HSKK（Demo）中文水平考试</div>
-        <table class="score-table">
-          <thead>
-            <tr>
-              <th>口试</th>
-              <th>Total Score</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td id="speak">-</td>
-              <td class="total" id="speak_total">-</td>
-              <td id="status">-</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <footer class="footer">
-        <div class="note">
-          说明：此页面为课程项目演示（DEMO），用于展示网页布局与“查询-展示”流程，不代表任何官方成绩验证结果。
-        </div>
-        <button class="btn" onclick="window.print()">Print / Save as PDF</button>
-      </footer>
     </main>
   </div>
 
-  <script src="app.js"></script>
 </body>
 </html>
