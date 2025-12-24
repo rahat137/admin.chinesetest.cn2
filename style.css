@@ -188,3 +188,9 @@ center h6{
     width: 95px;
   }
 }
+/* Center ONLY the top info table */
+.table.info-table{
+  width: 70%;        /* adjust: 65% / 75% if needed */
+  margin: 0 auto;    /* centers it */
+}
+
