@@ -1,6 +1,7 @@
 :root{
-  --panel:#ffffff;
-  --border:#e6e6e6;
+  --bg:#f3f5f7;
+  --card:#ffffff;
+  --border:#dcdcdc;
   --text:#222;
   --muted:#666;
 }
