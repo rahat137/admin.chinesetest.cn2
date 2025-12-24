@@ -2,7 +2,10 @@
    FINAL CLEAN STYLE.CSS
    (for your current HTML)
    ========================= */
-
+:root{
+  --panel-bg: #ffffff;
+  --border: 1px solid #e5e5e5;  /* ✅ thin border like red mark */
+}
 /* Theme */
 :root{
   --border-color: #e6e6e6;
