@@ -1,148 +1,190 @@
 /* =========================
-   CTI RESULT PAGE – FINAL
-   COPY THIS WHOLE FILE
+   FINAL CLEAN STYLE.CSS
+   (for your current HTML)
    ========================= */
 
+/* Theme */
 :root{
-  --border-color:#dcdcdc;
-  --border-w:1px;
-  --border: 1px solid #dcdcdc;
+  --border-color: #e6e6e6;
+  --border-w: 1px;
+  --border: var(--border-w) solid var(--border-color);
 
-  --header-bg:#f3f3f3;
-  --label-bg:#f7f7f7;
-
-  --text:#222;
+  --bg: #ffffff;        /* page background */
+  --panel-bg: #ffffff;  /* box background */
+  --header-bg: #f7f7f7; /* table header + label cells */
+  --text: #222;
+  --muted: #333;
 }
 
-*{ box-sizing:border-box; }
+*{ box-sizing: border-box; }
 
 body{
-  margin:0;
+  margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background:#fff;
-  color:var(--text);
+  background: var(--bg);
+  color: var(--text);
 }
 
-/* ===== PAGE WIDTH (CENTER LIKE SCREENSHOT) ===== */
+/* ===== Page width (Fix big left/right blank space) ===== */
 .well-sm{
-  width:100%;
-  max-width:1280px;   /* KEY */
-  margin:0 auto;      /* KEY */
-  padding:18px;
-  background:transparent;
+  width: 100%;
+  max-width: none;   /* remove limits */
+  margin: 0;         /* no centered narrow block */
+  padding: 18px 18px;
 }
 
-/* inner spacing */
-.well-lg{
-  padding:14px;
-}
-
-/* ===== TITLES ===== */
+/* ===== Titles (Fix size difference) ===== */
 center h2{
-  margin:16px 0 6px;
-  font-size:20px;
-  font-weight:700;
+  margin: 16px 0 6px;
+  font-size: 26px;     /* bigger title */
+  font-weight: 700;
+  color: #111;
 }
 center h4{
-  margin:0 0 18px;
-  font-size:13px;
-  font-weight:600;
+  margin: 0 0 18px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #222;
 }
 center h6{
-  margin:14px 0 6px;
-  font-size:12px;
-  font-weight:600;
+  margin: 14px 0 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #333;
 }
 
-/* ===== PANELS (NO THICK LINES) ===== */
+/* ===== Panels / Boxes (Fix box size + consistent borders) ===== */
 .panel{
-  background:#fff;
-  border:1px solid #dcdcdc;
-  border-radius:2px;
-  box-shadow:none;
-  margin-bottom:16px;
+  width: 100%;
+  background: var(--panel-bg);
+  border: var(--border);
+  border-radius: 4px;
+  margin: 0 0 16px 0;
 }
 
-/* IMPORTANT FIX */
+.panel-default{
+  border: var(--border);
+}
+
+/* the inside padding area */
+.well-lg{
+  padding: 14px;
+  background: var(--panel-bg);
+}
+
+/* inner panels */
+.panel .panel{
+  border: var(--border);
+  border-radius: 4px;
+  background: var(--panel-bg);
+  margin: 0 0 16px 0;
+  overflow: hidden;
+}
+
+/* panel header bar text */
 .panel-body{
-  padding:8px 12px;
-  font-size:12.5px;
-  font-weight:600;
-  border:0;   /* KEY: removes extra thick line */
+  padding: 10px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #444;
+  background: var(--panel-bg);
+  border-bottom: var(--border);
 }
 
-/* ===== TABLES (ALL SAME THIN BORDER) ===== */
+/* ===== Tables (Fix thick/thin borders + middle divider issue) ===== */
 .table{
-  width:100%;
-  border-collapse:collapse;  /* KEY */
-  table-layout:fixed;
-  font-size:12.5px;
-  border:1px solid #dcdcdc;  /* ONE outer border */
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;    /* IMPORTANT: prevents weird column gaps */
+  background: var(--panel-bg);
+  margin: 0;
+  font-size: 13px;
 }
 
-/* REMOVE BOOTSTRAP DOUBLE BORDER */
 .table-bordered{
-  border:0 !important;       /* KEY */
+  border: var(--border);
 }
 
-/* table cells */
-.table td,
-.table th{
-  border:1px solid #dcdcdc;
-  padding:10px 12px;
-  vertical-align:middle;
+.table td, .table th{
+  border: var(--border);  /* SAME border everywhere */
+  padding: 10px 12px;
+  vertical-align: middle;
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
 }
 
-/* header row */
+/* header row (听力/阅读/写作/Total Score etc.) */
 .table thead th{
-  background:var(--header-bg);
-  font-weight:700;
-  text-align:center;
+  background: var(--header-bg);
+  font-weight: 700;
 }
 
-/* left label column */
-.table td.active{
-  background:var(--label-bg);
-  font-weight:600;
+/* left label cells */
+.active{
+  background: var(--header-bg);
+  font-weight: 500;
+  color: #333;
 }
 
-/* label alignment */
-.text-right{ text-align:right; }
+.text-right{ text-align: right; }
+
+/* Make label column width stable */
 .table td.active.text-right{
-  width:260px;
-  white-space:nowrap;
+  width: 260px;
+  white-space: nowrap;
 }
 
-/* 考试信息 row */
-.table td[style*="font-size:14px"]{
-  font-weight:700;
-  background:#fff;
-}
-
-/* photo column */
+/* Photo cell */
 .table td[rowspan]{
-  width:160px;
-  text-align:center;
+  width: 150px;
+  text-align: center;
 }
 
-/* photo */
 .table img{
-  display:block;
-  margin:6px auto;
-  width:120px;
-  border:1px solid #dcdcdc;
-  padding:3px;
-  background:#fff;
+  display: block;
+  margin: 6px auto;
+  border: var(--border);
+  background: #fff;
+  padding: 4px;
+  width: 115px;   /* consistent size */
+  height: auto;
 }
 
-/* ===== MOBILE ===== */
-@media (max-width:768px){
-  .well-sm{ padding:10px; max-width:100%; }
-  .table td,
-  .table th{ padding:8px; font-size:12px; }
-  .table td.active.text-right{
-    width:44%;
-    white-space:normal;
+/* ===== Special row: 考试信息 (if it’s a full-width divider row) ===== */
+/* If your HTML has a row like: <td colspan="2" style="font-size:14px;">考试信息</td> */
+.table td[colspan="2"][style*="font-size:14px"],
+.table td[colspan="2"][style*="font-size: 14px"]{
+  background: var(--panel-bg);
+  font-weight: 700;
+  color: #333;
+}
+
+/* ===== Mobile responsive ===== */
+@media (max-width: 768px){
+  .well-sm{
+    padding: 10px;
   }
-  .table img{ width:95px; }
+
+  center h2{ font-size: 20px; }
+  center h4{ font-size: 13px; }
+
+  .well-lg{ padding: 10px; }
+
+  .table td, .table th{
+    padding: 8px 8px;
+    font-size: 12.5px;
+  }
+
+  .table td.active.text-right{
+    width: 42%;
+    white-space: normal;
+  }
+
+  .table td[rowspan]{
+    width: 120px;
+  }
+
+  .table img{
+    width: 95px;
+  }
 }
