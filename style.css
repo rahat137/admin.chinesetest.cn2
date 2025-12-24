@@ -1,86 +1,87 @@
 /* =========================
-   CLEAN FINAL style.css
-   (consistent thin borders)
+   FINAL CLEAN STYLE.CSS
+   (for your current HTML)
    ========================= */
 
-* { box-sizing: border-box; }
-
+/* Theme */
 :root{
-  --border-color: #e5e5e5;
+  --border-color: #e6e6e6;
   --border-w: 1px;
   --border: var(--border-w) solid var(--border-color);
 
-  --page-bg: #ffffff;
-  --panel-bg: #ffffff;
-  --header-bg: #f7f7f7;
-
+  --bg: #ffffff;        /* page background */
+  --panel-bg: #ffffff;  /* box background */
+  --header-bg: #f7f7f7; /* table header + label cells */
   --text: #222;
   --muted: #333;
 }
 
+*{ box-sizing: border-box; }
+
 body{
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background: var(--page-bg);
+  background: var(--bg);
   color: var(--text);
 }
 
-/* Make page use full width like your teacher screenshot */
+/* ===== Page width (Fix big left/right blank space) ===== */
 .well-sm{
   width: 100%;
-  margin: 0;
-  padding: 18px 20px;   /* small safe padding */
+  max-width: none;   /* remove limits */
+  margin: 0;         /* no centered narrow block */
+  padding: 18px 18px;
 }
 
-/* Titles */
+/* ===== Titles (Fix size difference) ===== */
 center h2{
-  margin: 10px 0 6px;
-  font-size: 26px;      /* bigger (your issue #1) */
+  margin: 16px 0 6px;
+  font-size: 26px;     /* bigger title */
   font-weight: 700;
+  color: #111;
 }
 center h4{
-  margin: 0 0 16px;
-  font-size: 15px;
+  margin: 0 0 18px;
+  font-size: 14px;
   font-weight: 600;
-  color: var(--muted);
+  color: #222;
 }
 center h6{
-  margin: 12px 0 6px;
+  margin: 14px 0 6px;
   font-size: 12px;
-  color: var(--muted);
   font-weight: 600;
+  color: #333;
 }
 
-/* Panels / Boxes */
+/* ===== Panels / Boxes (Fix box size + consistent borders) ===== */
 .panel{
   width: 100%;
   background: var(--panel-bg);
   border: var(--border);
-  border-radius: 6px;
+  border-radius: 4px;
   margin: 0 0 16px 0;
-  box-shadow: none;
 }
 
 .panel-default{
   border: var(--border);
 }
 
-/* Remove gray inside background (prevents “double border” look) */
+/* the inside padding area */
 .well-lg{
   padding: 14px;
   background: var(--panel-bg);
 }
 
-/* Inner panels */
+/* inner panels */
 .panel .panel{
   border: var(--border);
-  border-radius: 6px;
+  border-radius: 4px;
   background: var(--panel-bg);
   margin: 0 0 16px 0;
-  overflow: hidden; /* keeps corners clean */
+  overflow: hidden;
 }
 
-/* Panel header bar */
+/* panel header bar text */
 .panel-body{
   padding: 10px 12px;
   font-size: 13px;
@@ -90,46 +91,44 @@ center h6{
   border-bottom: var(--border);
 }
 
-/* Tables */
+/* ===== Tables (Fix thick/thin borders + middle divider issue) ===== */
 .table{
   width: 100%;
-  border-collapse: collapse;   /* important for consistent lines */
+  border-collapse: collapse;
+  table-layout: fixed;    /* IMPORTANT: prevents weird column gaps */
   background: var(--panel-bg);
   margin: 0;
   font-size: 13px;
-
-  /* IMPORTANT:
-     remove table outer border to avoid double-thick edges */
-  border: none;
 }
 
 .table-bordered{
-  border: none; /* prevent extra outer border */
+  border: var(--border);
 }
 
 .table td, .table th{
-  border: var(--border);
+  border: var(--border);  /* SAME border everywhere */
   padding: 10px 12px;
   vertical-align: middle;
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
 }
 
-/* Header rows */
+/* header row (听力/阅读/写作/Total Score etc.) */
 .table thead th{
   background: var(--header-bg);
   font-weight: 700;
 }
 
-/* Left label cells */
+/* left label cells */
 .active{
   background: var(--header-bg);
   font-weight: 500;
   color: #333;
 }
 
-/* Alignment helper */
 .text-right{ text-align: right; }
 
-/* Keep label column stable */
+/* Make label column width stable */
 .table td.active.text-right{
   width: 260px;
   white-space: nowrap;
@@ -137,7 +136,7 @@ center h6{
 
 /* Photo cell */
 .table td[rowspan]{
-  width: 140px;
+  width: 150px;
   text-align: center;
 }
 
@@ -147,18 +146,29 @@ center h6{
   border: var(--border);
   background: #fff;
   padding: 4px;
-  width: 110px;
+  width: 115px;   /* consistent size */
   height: auto;
+}
+
+/* ===== Special row: 考试信息 (if it’s a full-width divider row) ===== */
+/* If your HTML has a row like: <td colspan="2" style="font-size:14px;">考试信息</td> */
+.table td[colspan="2"][style*="font-size:14px"],
+.table td[colspan="2"][style*="font-size: 14px"]{
+  background: var(--panel-bg);
+  font-weight: 700;
+  color: #333;
 }
 
 /* ===== Mobile responsive ===== */
 @media (max-width: 768px){
   .well-sm{
-    padding: 10px 10px;
+    padding: 10px;
   }
 
   center h2{ font-size: 20px; }
   center h4{ font-size: 13px; }
+
+  .well-lg{ padding: 10px; }
 
   .table td, .table th{
     padding: 8px 8px;
@@ -171,7 +181,7 @@ center h6{
   }
 
   .table td[rowspan]{
-    width: 110px;
+    width: 120px;
   }
 
   .table img{
