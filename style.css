@@ -3,15 +3,16 @@
 body{
   margin:0;
   font-family: Arial, Helvetica, sans-serif;
-  background:#f5f5f5;
+  background:#ffffff;   /* ✅ pure white background */
   color:#222;
 }
 
-/* ===== Centered big page box ===== */
+/* ===== Full width page layout ===== */
 .well-sm{
-  max-width: 1200px;     /* makes it wide like screenshot 2 */
-  margin: 18px auto;     /* CENTER */
-  padding: 12px;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 18px 24px;
 }
 
 /* Titles */
@@ -33,67 +34,67 @@ center h6{
   font-weight: 600;
 }
 
-/* ===== Outer big panel (the full big box) ===== */
+/* ===== Panels (outer + inner) ===== */
 .panel{
-  background:#fff;
-  border:1px solid #ddd;
+  background:#ffffff;
+  border: 1.5px solid #cfcfcf;   /* ✅ thicker border */
   border-radius:4px;
   margin-bottom: 16px;
 }
 
-.panel-default{ border-color:#ddd; }
+.panel-default{ border-color:#cfcfcf; }
 
-/* The inside padding area (your well-lg) */
+/* inside padding area */
 .well-lg{
+  background:#ffffff;    /* ✅ remove gray */
   padding: 14px;
-  background:#f5f5f5;  /* makes inner panels sit on light gray like screenshot 2 */
 }
 
 /* Inner panels */
 .panel .panel{
-  background:#fff;
-  border:1px solid #ddd;
+  border: 1.5px solid #cfcfcf;   /* ✅ same thickness inside */
+  background:#ffffff;
   border-radius:3px;
   margin: 0 0 16px 0;
   overflow:hidden;
 }
 
-/* Panel header bar (Information of test taker, HSK title, etc.) */
+/* Panel header bar */
 .panel-body{
   padding: 10px 12px;
   font-size: 13px;
   font-weight: 500;
   color:#444;
-  background:#fff;
-  border-bottom: 1px solid #ddd;
+  background:#ffffff;
+  border-bottom: 1.5px solid #cfcfcf;
 }
 
-/* ===== Tables like screenshot 2 ===== */
+/* ===== Tables ===== */
 .table{
   width:100%;
   border-collapse: collapse;
-  background:#fff;
+  background:#ffffff;
   margin:0;
   font-size: 13px;
 }
 
 .table td, .table th{
-  border:1px solid #ddd;
+  border: 1.5px solid #d3d3d3;   /* ✅ stronger table borders */
   padding: 10px 12px;
   vertical-align: middle;
 }
 
 /* header rows */
 .table thead th{
-  background:#f5f5f5;
+  background:#f7f7f7;    /* ✅ light gray like original */
   font-weight: 700;
 }
 
-.table-bordered{ border:1px solid #ddd; }
+.table-bordered{ border: 1.5px solid #d3d3d3; }
 
 /* left label cells */
 .active{
-  background:#f5f5f5;
+  background:#f7f7f7;     /* ✅ match original */
   font-weight: 500;
   color:#333;
 }
@@ -101,16 +102,16 @@ center h6{
 /* alignment helper */
 .text-right{ text-align:right; }
 
-/* Make label column width stable like screenshot 2 */
+/* stable label column width */
 .table td.active.text-right{
   width: 260px;
   white-space: nowrap;
 }
 
-/* The "考试信息" divider row */
+/* "考试信息" divider row */
 .table td[colspan="2"][style*="font-size:14px"],
 .table td[colspan="2"][style*="font-size: 14px"]{
-  background:#fff;
+  background:#ffffff;
   font-weight: 700;
   color:#333;
 }
@@ -124,14 +125,14 @@ center h6{
 .table img{
   display:block;
   margin: 6px auto;
-  border:1px solid #ddd;
-  background:#fff;
+  border: 1.5px solid #cfcfcf;  /* ✅ stronger photo border */
+  background:#ffffff;
   padding: 4px;
   width: 110px;
   height: auto;
 }
 
-/* ===== Mobile (keep boxed & readable) ===== */
+/* ===== Mobile ===== */
 @media (max-width: 768px){
   .well-sm{
     margin: 0;
