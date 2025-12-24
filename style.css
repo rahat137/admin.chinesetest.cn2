@@ -1,104 +1,98 @@
-/* =========================
-   FINAL CLEAN STYLE.CSS
-   (for your current HTML)
-   ========================= */
-
-/* Theme */
 :root{
-  --border-color: #e6e6e6;
-  --border-w: 1px;
-  --border: var(--border-w) solid var(--border-color);
+  --border-color:#e5e5e5;
+  --border-w:1px;
+  --border:var(--border-w) solid var(--border-color);
 
-  --bg: #ffffff;        /* page background */
-  --panel-bg: #ffffff;  /* box background */
-  --header-bg: #f7f7f7; /* table header + label cells */
-  --text: #222;
-  --muted: #333;
+  --bg:#ffffff;
+  --panel-bg:#ffffff;
+  --header-bg:#f5f5f5;   /* bootstrap-like */
+  --text:#222;
+  --muted:#666;
 }
 
-*{ box-sizing: border-box; }
+*{box-sizing:border-box}
 
 body{
-  margin: 0;
+  margin:0;
   font-family: Arial, Helvetica, sans-serif;
   background: var(--bg);
   color: var(--text);
 }
 
-/* ===== Page width (Fix big left/right blank space) ===== */
+/* ===== 1) PAGE WIDTH like Image-1 (centered, not full width) ===== */
 .well-sm{
-  width: 100%;
-  max-width: none;   /* remove limits */
-  margin: 0;         /* no centered narrow block */
-  padding: 18px 18px;
+  max-width: 1180px;     /* key: same feel as screenshot */
+  margin: 0 auto;        /* center */
+  padding: 18px 15px;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
 }
 
-/* ===== Titles (Fix size difference) ===== */
+/* ===== 2) Title sizes like Image-1 (smaller than your 26px) ===== */
 center h2{
-  margin: 16px 0 6px;
-  font-size: 26px;     /* bigger title */
+  margin: 14px 0 6px;
+  font-size: 20px;
   font-weight: 700;
-  color: #111;
+  color:#111;
 }
 center h4{
-  margin: 0 0 18px;
-  font-size: 14px;
-  font-weight: 600;
-  color: #222;
-}
-center h6{
-  margin: 14px 0 6px;
+  margin: 0 0 14px;
   font-size: 12px;
   font-weight: 600;
-  color: #333;
+  color:#333;
+}
+center h6{
+  margin: 10px 0 6px;
+  font-size: 11px;
+  font-weight: 600;
+  color:#444;
 }
 
-/* ===== Panels / Boxes (Fix box size + consistent borders) ===== */
+/* ===== 3) Panels like Bootstrap 3 default ===== */
 .panel{
-  width: 100%;
   background: var(--panel-bg);
   border: var(--border);
   border-radius: 4px;
-  margin: 0 0 16px 0;
+  box-shadow: none;
+  margin-bottom: 16px;
 }
+.panel-default{ border-color: var(--border-color); }
 
-.panel-default{
-  border: var(--border);
-}
-
-/* the inside padding area */
 .well-lg{
-  padding: 14px;
-  background: var(--panel-bg);
+  padding: 12px;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
 }
 
-/* inner panels */
-.panel .panel{
-  border: var(--border);
-  border-radius: 4px;
-  background: var(--panel-bg);
-  margin: 0 0 16px 0;
-  overflow: hidden;
+/* IMPORTANT: Image-1 uses panel heading bar for "Information of test taker" */
+.panel-heading{
+  background: var(--header-bg) !important;
+  border-bottom: var(--border) !important;
+  padding: 8px 12px;
+}
+.panel-title{
+  font-size: 12px;
+  font-weight: 700;
+  color:#333;
 }
 
-/* panel header bar text */
+/* If your HTML uses .panel-body for that row, keep it minimal */
 .panel-body{
-  padding: 10px 12px;
-  font-size: 13px;
-  font-weight: 500;
-  color: #444;
-  background: var(--panel-bg);
-  border-bottom: var(--border);
+  padding: 0; /* Bootstrap page looks like table starts right away */
+  background: transparent;
+  border: 0;
 }
 
-/* ===== Tables (Fix thick/thin borders + middle divider issue) ===== */
+/* ===== 4) Tables: very light borders + tighter padding ===== */
 .table{
   width: 100%;
   border-collapse: collapse;
-  table-layout: fixed;    /* IMPORTANT: prevents weird column gaps */
+  table-layout: fixed;
   background: var(--panel-bg);
   margin: 0;
-  font-size: 13px;
+  font-size: 12px;        /* Image-1 feels smaller */
 }
 
 .table-bordered{
@@ -106,85 +100,71 @@ center h6{
 }
 
 .table td, .table th{
-  border: var(--border);  /* SAME border everywhere */
-  padding: 10px 12px;
+  border: var(--border);
+  padding: 7px 10px;      /* tighter like screenshot */
   vertical-align: middle;
   word-wrap: break-word;
   overflow-wrap: anywhere;
 }
 
-/* header row (听力/阅读/写作/Total Score etc.) */
 .table thead th{
   background: var(--header-bg);
   font-weight: 700;
+  color:#333;
 }
 
-/* left label cells */
+/* Left label cells (bootstrap .active look) */
 .active{
-  background: var(--header-bg);
-  font-weight: 500;
-  color: #333;
+  background: var(--header-bg) !important;
+  font-weight: 600;
+  color:#333;
 }
 
-.text-right{ text-align: right; }
-
-/* Make label column width stable */
+/* Label column width closer to Image-1 */
 .table td.active.text-right{
-  width: 260px;
+  width: 210px;
   white-space: nowrap;
 }
 
-/* Photo cell */
+/* ===== 5) Photo cell: fixed and aligned like Image-1 ===== */
 .table td[rowspan]{
-  width: 150px;
+  width: 160px;
   text-align: center;
 }
 
 .table img{
-  display: block;
+  display:block;
   margin: 6px auto;
   border: var(--border);
-  background: #fff;
+  background:#fff;
   padding: 4px;
-  width: 115px;   /* consistent size */
+  width: 105px;     /* closer to screenshot */
   height: auto;
 }
 
-/* ===== Special row: 考试信息 (if it’s a full-width divider row) ===== */
-/* If your HTML has a row like: <td colspan="2" style="font-size:14px;">考试信息</td> */
-.table td[colspan="2"][style*="font-size:14px"],
-.table td[colspan="2"][style*="font-size: 14px"]{
-  background: var(--panel-bg);
+/* ===== 6) Section divider row “考试信息” should NOT look special ===== */
+.table td[colspan]{
+  background: transparent;
   font-weight: 700;
-  color: #333;
+  color:#333;
 }
 
-/* ===== Mobile responsive ===== */
+/* ===== Mobile ===== */
 @media (max-width: 768px){
-  .well-sm{
-    padding: 10px;
-  }
-
-  center h2{ font-size: 20px; }
-  center h4{ font-size: 13px; }
-
-  .well-lg{ padding: 10px; }
+  .well-sm{ padding: 10px; }
+  center h2{ font-size: 18px; }
+  center h4{ font-size: 12px; }
 
   .table td, .table th{
-    padding: 8px 8px;
-    font-size: 12.5px;
+    padding: 7px 8px;
+    font-size: 12px;
   }
 
   .table td.active.text-right{
-    width: 42%;
+    width: 45%;
     white-space: normal;
   }
 
-  .table td[rowspan]{
-    width: 120px;
-  }
-
-  .table img{
-    width: 95px;
-  }
+  .table td[rowspan]{ width: 130px; }
+  .table img{ width: 90px; }
 }
