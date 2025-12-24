@@ -1,190 +1,194 @@
-/* =========================
-   FINAL CLEAN STYLE.CSS
-   (for your current HTML)
-   ========================= */
-
-/* Theme */
-:root{
-  --border-color: #e6e6e6;
-  --border-w: 1px;
-  --border: var(--border-w) solid var(--border-color);
-
-  --bg: #ffffff;        /* page background */
-  --panel-bg: #ffffff;  /* box background */
-  --header-bg: #f7f7f7; /* table header + label cells */
-  --text: #222;
-  --muted: #333;
-}
-
-*{ box-sizing: border-box; }
-
-body{
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-}
-
-/* ===== Page width (Fix big left/right blank space) ===== */
-.well-sm{
-  width: 100%;
-  max-width: none;   /* remove limits */
-  margin: 0;         /* no centered narrow block */
-  padding: 18px 18px;
-}
-
-/* ===== Titles (Fix size difference) ===== */
-center h2{
-  margin: 16px 0 6px;
-  font-size: 26px;     /* bigger title */
-  font-weight: 700;
-  color: #111;
-}
-center h4{
-  margin: 0 0 18px;
-  font-size: 14px;
-  font-weight: 600;
-  color: #222;
-}
-center h6{
-  margin: 14px 0 6px;
-  font-size: 12px;
-  font-weight: 600;
-  color: #333;
-}
-
-/* ===== Panels / Boxes (Fix box size + consistent borders) ===== */
-.panel{
-  width: 100%;
-  background: var(--panel-bg);
-  border: var(--border);
-  border-radius: 4px;
-  margin: 0 0 16px 0;
-}
-
-.panel-default{
-  border: var(--border);
-}
-
-/* the inside padding area */
-.well-lg{
-  padding: 14px;
-  background: var(--panel-bg);
-}
-
-/* inner panels */
-.panel .panel{
-  border: var(--border);
-  border-radius: 4px;
-  background: var(--panel-bg);
-  margin: 0 0 16px 0;
-  overflow: hidden;
-}
-
-/* panel header bar text */
-.panel-body{
-  padding: 10px 12px;
-  font-size: 13px;
-  font-weight: 500;
-  color: #444;
-  background: var(--panel-bg);
-  border-bottom: var(--border);
-}
-
-/* ===== Tables (Fix thick/thin borders + middle divider issue) ===== */
-.table{
-  width: 100%;
-  border-collapse: collapse;
-  table-layout: fixed;    /* IMPORTANT: prevents weird column gaps */
-  background: var(--panel-bg);
-  margin: 0;
-  font-size: 13px;
-}
-
-.table-bordered{
-  border: var(--border);
-}
-
-.table td, .table th{
-  border: var(--border);  /* SAME border everywhere */
-  padding: 10px 12px;
-  vertical-align: middle;
-  word-wrap: break-word;
-  overflow-wrap: anywhere;
-}
-
-/* header row (听力/阅读/写作/Total Score etc.) */
-.table thead th{
-  background: var(--header-bg);
-  font-weight: 700;
-}
-
-/* left label cells */
-.active{
-  background: var(--header-bg);
-  font-weight: 500;
-  color: #333;
-}
-
-.text-right{ text-align: right; }
-
-/* Make label column width stable */
-.table td.active.text-right{
-  width: 260px;
-  white-space: nowrap;
-}
-
-/* Photo cell */
-.table td[rowspan]{
-  width: 150px;
-  text-align: center;
-}
-
-.table img{
-  display: block;
-  margin: 6px auto;
-  border: var(--border);
-  background: #fff;
-  padding: 4px;
-  width: 115px;   /* consistent size */
-  height: auto;
-}
-
-/* ===== Special row: 考试信息 (if it’s a full-width divider row) ===== */
-/* If your HTML has a row like: <td colspan="2" style="font-size:14px;">考试信息</td> */
-.table td[colspan="2"][style*="font-size:14px"],
-.table td[colspan="2"][style*="font-size: 14px"]{
-  background: var(--panel-bg);
-  font-weight: 700;
-  color: #333;
-}
-
-/* ===== Mobile responsive ===== */
-@media (max-width: 768px){
-  .well-sm{
-    padding: 10px;
-  }
-
-  center h2{ font-size: 20px; }
-  center h4{ font-size: 13px; }
-
-  .well-lg{ padding: 10px; }
-
-  .table td, .table th{
-    padding: 8px 8px;
-    font-size: 12.5px;
-  }
-
-  .table td.active.text-right{
-    width: 42%;
-    white-space: normal;
-  }
-
-  .table td[rowspan]{
-    width: 120px;
-  }
-
-  .table img{
-    width: 95px;
-  }
-}
+<!-- Bootstrap -->
+<link rel="stylesheet" href="style.css">
+<div class="well-sm">
+	
+	<center>
+	  <h2>中文考试成绩在线验证结果查询</h3>
+	  <h4>汉考国际教育科技（北京）有限公司（CTI）</h4>
+	</center>
+	<div class="panel panel-default">
+		<div class="well-lg" >
+			<div class="panel panel-default">
+				<!-- Default panel contents -->
+				<div class="panel-body">
+					Information of test taker 
+				</div>
+				<!-- Table -->
+				<table class="table table-bordered">
+					<tbody>
+						<tr>
+							<td class="active text-right">Name on Certificate </td>
+							<td>DOAN THI BICH NGOC</td>
+							<td rowspan="5" width="100px">
+								
+									
+									
+										<img src="photo.jpg" height="200px"/>
+									
+								
+							</td>
+						</tr>
+						<tr>
+							<td class="active text-right">Chinese Name</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td class="active text-right">Nationality</td>
+							<td>越南</td>
+						</tr>
+						<tr>
+							<td class="active text-right">Gender</td>
+							<td>女</td>
+						</tr>
+						<tr>
+							<td colspan="2" class="" style="font-size:14px;">考试信息</td>
+						</tr>
+						<tr>
+							<td class="active text-right">考点名称</td>
+							<td colspan="2">越南胡志明市师范大学（网考）</td>
+						</tr>
+						<tr>
+							<td class="active text-right">Ticket No.</td>
+							<td colspan="2">H52333850020100177&nbsp;&nbsp;H92325850020100240</td>
+						</tr>
+						<tr>
+							<td class="active text-right">证书编号</td>
+							<td colspan="2">H52303005309</td>
+						</tr>
+						<tr>
+							<td class="active text-right">Test Type</td>
+							
+							
+							      <td colspan="2">HSK五级</td>
+							
+						     
+						</tr>
+						
+						<tr>
+							<td class="active text-right">Test Time</td>
+							<td colspan="2">Mar 11, 2023</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			
+			
+			<div class="panel panel-default">
+				<!-- Default panel contents -->
+				<div class="panel-body">
+					HSK五级(Mar 11, 2023)中文水平考试
+					
+				</div>
+				<!-- Table -->
+				<table class="table table-bordered">
+					<thead>
+						<tr class="active">
+							
+								<th><div align="center">听力</div></th>
+							
+								<th><div align="center">阅读</div></th>
+							
+								<th><div align="center">写作</div></th>
+							
+							<th>
+							<div align="center">
+								
+									
+									Total Score
+								
+							</div>
+							</th>
+							
+								
+							
+							
+							
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							
+								<td align="center">
+									89
+								</td>
+							
+								<td align="center">
+									84
+								</td>
+							
+								<td align="center">
+									68
+								</td>
+							
+							<td align="center">
+								
+									
+									241
+								
+							</td>
+							
+								
+							
+							
+						</tr>
+					</tbody>
+				</table>
+				
+			</div>
+			
+			<!-- 越南才显示 或者 能关联上口语的才显示 flag 代表关联上成绩 180 越南-->
+			
+			
+				<div class="panel panel-default">
+					<!-- Default panel contents -->
+					<div class="panel-body">
+						HSKK（高级）(Mar 11, 2023)中文水平考试
+					</div>
+					<!-- Table -->
+					<table class="table table-bordered">
+						<thead>
+							<tr class="active">
+								
+								
+									<th><div align="center">口试</div></th>
+								
+								<th><div align="center">Total Score</div></th>
+								
+									
+										<th><div align="center">Status</div></th>
+									
+								
+								
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								
+									<td align="center">
+										56
+									</td>
+								
+								<td align="center">56</td>
+								
+									
+										<td align="center">不合格</td>
+									
+								
+								
+							</tr>
+						</tbody>
+					</table>
+					
+				</div>
+			
+			
+			
+			
+			<center>
+	  <h6>最终解释权归汉考国际所有</h6>
+	</center>
+			
+		</div>
+	</div>
+	
+</div>
