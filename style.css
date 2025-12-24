@@ -1,162 +1,163 @@
 /* ===== Base ===== */
-* {
-  box-sizing: border-box;
-}
-
-body {
+*{ box-sizing:border-box; }
+body{
+  margin:0;
   font-family: Arial, Helvetica, sans-serif;
-  background: #f5f6f7;
-  color: #333;
-  margin: 0;
-  padding: 0;
+  background:#f5f5f5;
+  color:#222;
 }
 
-/* ===== Page Container ===== */
-.well-sm {
-  max-width: 1100px;
-  margin: 24px auto;
+/* ===== Centered big page box ===== */
+.well-sm{
+  max-width: 1200px;     /* makes it wide like screenshot 2 */
+  margin: 18px auto;     /* CENTER */
   padding: 12px;
 }
 
-/* ===== Titles ===== */
-h2 {
-  margin: 10px 0 4px;
+/* Titles */
+center h2{
+  margin: 10px 0 6px;
   font-size: 22px;
   font-weight: 700;
 }
-
-h4 {
-  margin: 0 0 18px;
+center h4{
+  margin: 0 0 16px;
   font-size: 14px;
-  font-weight: 500;
-  color: #666;
+  font-weight: 600;
+  color:#333;
 }
-
-h6 {
-  margin: 18px 0 6px;
+center h6{
+  margin: 12px 0 6px;
   font-size: 12px;
-  color: #666;
+  color:#333;
+  font-weight: 600;
 }
 
-/* ===== Panels ===== */
-.panel {
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+/* ===== Outer big panel (the full big box) ===== */
+.panel{
+  background:#fff;
+  border:1px solid #ddd;
+  border-radius:4px;
   margin-bottom: 16px;
 }
 
-.panel-default {
-  border-color: #ddd;
+.panel-default{ border-color:#ddd; }
+
+/* The inside padding area (your well-lg) */
+.well-lg{
+  padding: 14px;
+  background:#f5f5f5;  /* makes inner panels sit on light gray like screenshot 2 */
 }
 
-.panel-body {
+/* Inner panels */
+.panel .panel{
+  background:#fff;
+  border:1px solid #ddd;
+  border-radius:3px;
+  margin: 0 0 16px 0;
+  overflow:hidden;
+}
+
+/* Panel header bar (Information of test taker, HSK title, etc.) */
+.panel-body{
   padding: 10px 12px;
-  font-size: 14px;
-  font-weight: 700;
-  background: #f7f7f7;
+  font-size: 13px;
+  font-weight: 500;
+  color:#444;
+  background:#fff;
   border-bottom: 1px solid #ddd;
 }
 
-/* ===== Inner spacing ===== */
-.well-lg {
-  padding: 12px;
-}
-
-/* ===== Tables ===== */
-.table {
-  width: 100%;
+/* ===== Tables like screenshot 2 ===== */
+.table{
+  width:100%;
   border-collapse: collapse;
-  background: #fff;
+  background:#fff;
+  margin:0;
+  font-size: 13px;
 }
 
-.table th,
-.table td {
-  border: 1px solid #ddd;
-  padding: 8px 10px;
-  font-size: 14px;
+.table td, .table th{
+  border:1px solid #ddd;
+  padding: 10px 12px;
   vertical-align: middle;
 }
 
-.table th {
-  background: #f5f5f5;
+/* header rows */
+.table thead th{
+  background:#f5f5f5;
   font-weight: 700;
 }
 
-.table thead th {
-  background: #f0f0f0;
+.table-bordered{ border:1px solid #ddd; }
+
+/* left label cells */
+.active{
+  background:#f5f5f5;
+  font-weight: 500;
+  color:#333;
 }
 
-.table-bordered {
-  border: 1px solid #ddd;
-}
+/* alignment helper */
+.text-right{ text-align:right; }
 
-/* Left labels */
-.active {
-  background: #f7f7f7;
-  font-weight: 700;
+/* Make label column width stable like screenshot 2 */
+.table td.active.text-right{
+  width: 260px;
   white-space: nowrap;
 }
 
-/* Alignment helpers */
-.text-right {
-  text-align: right;
+/* The "考试信息" divider row */
+.table td[colspan="2"][style*="font-size:14px"],
+.table td[colspan="2"][style*="font-size: 14px"]{
+  background:#fff;
+  font-weight: 700;
+  color:#333;
 }
 
-.text-center {
-  text-align: center;
+/* photo cell */
+.table td[rowspan]{
+  width: 130px;
+  text-align:center;
 }
 
-/* ===== Photo ===== */
-img {
-  display: block;
-  max-width: 100%;
+.table img{
+  display:block;
+  margin: 6px auto;
+  border:1px solid #ddd;
+  background:#fff;
+  padding: 4px;
+  width: 110px;
   height: auto;
-  border: 1px solid #ddd;
 }
 
-/* Fix photo cell width like CTI */
-td[rowspan] {
-  width: 120px;
-  text-align: center;
-}
-
-/* ===== Section spacing ===== */
-.panel + .panel {
-  margin-top: 14px;
-}
-
-/* ===== Footer ===== */
-center h6 {
-  text-align: center;
-}
-
-/* ===== Responsive (Mobile) ===== */
-@media (max-width: 768px) {
-  .well-sm {
+/* ===== Mobile (keep boxed & readable) ===== */
+@media (max-width: 768px){
+  .well-sm{
     margin: 0;
-    padding: 8px;
+    padding: 10px;
+    max-width: 100%;
+  }
+  .well-lg{ padding: 10px; }
+
+  center h2{ font-size: 18px; }
+  center h4{ font-size: 13px; }
+
+  .table td, .table th{
+    padding: 8px 8px;
+    font-size: 12.5px;
   }
 
-  h2 {
-    font-size: 18px;
+  .table td.active.text-right{
+    width: 42%;
+    white-space: normal;
   }
 
-  h4 {
-    font-size: 13px;
+  .table td[rowspan]{
+    width: 110px;
   }
 
-  .panel-body {
-    font-size: 13px;
-  }
-
-  .table th,
-  .table td {
-    font-size: 13px;
-    padding: 6px 8px;
-  }
-
-  td[rowspan] {
-    width: 100px;
+  .table img{
+    width: 95px;
   }
 }
