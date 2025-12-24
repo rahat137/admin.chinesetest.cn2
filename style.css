@@ -3,11 +3,15 @@
    (consistent thin borders)
    ========================= */
 
-* { box-sizing: border-box; }
+* { 
+  box-sizing: border-box; 
+  /* Reset any accidental thick borders on all elements */
+  border-width: var(--border-w) !important;
+}
 
 :root{
-  --border-color: #e5e5e5;
-  --border-w: 1px;
+  --border-color: #e5e5e5; /* Light, subtle color (matches green lines) */
+  --border-w: 1px; /* Thin line (fixed: ensures NO thick borders) */
   --border: var(--border-w) solid var(--border-color);
 
   --page-bg: #ffffff;
@@ -30,6 +34,7 @@ body{
   width: 100%;
   margin: 0;
   padding: 18px 20px;   /* small safe padding */
+  border: none; /* Remove extra outer border */
 }
 
 /* Titles */
@@ -55,25 +60,27 @@ center h6{
 .panel{
   width: 100%;
   background: var(--panel-bg);
-  border: var(--border);
+  border: var(--border); /* Thin border (matches green lines) */
   border-radius: 6px;
   margin: 0 0 16px 0;
   box-shadow: none;
+  overflow: hidden; /* Prevent border overflow */
 }
 
 .panel-default{
-  border: var(--border);
+  border: var(--border); /* Consistent thin border */
 }
 
 /* Remove gray inside background (prevents “double border” look) */
 .well-lg{
   padding: 14px;
   background: var(--panel-bg);
+  border: none; /* No extra inner border */
 }
 
 /* Inner panels */
 .panel .panel{
-  border: var(--border);
+  border: var(--border); /* Thin inner panel border */
   border-radius: 6px;
   background: var(--panel-bg);
   margin: 0 0 16px 0;
@@ -87,28 +94,25 @@ center h6{
   font-weight: 500;
   color: #444;
   background: var(--panel-bg);
-  border-bottom: var(--border);
+  border-bottom: var(--border); /* Thin bottom border */
 }
 
 /* Tables */
 .table{
   width: 100%;
-  border-collapse: collapse;   /* important for consistent lines */
+  border-collapse: collapse;   /* Critical: merges borders to avoid thickness */
   background: var(--panel-bg);
   margin: 0;
   font-size: 13px;
-
-  /* IMPORTANT:
-     remove table outer border to avoid double-thick edges */
-  border: none;
+  border: none; /* No outer table border */
 }
 
 .table-bordered{
-  border: none; /* prevent extra outer border */
+  border: none; /* Prevent extra outer border */
 }
 
 .table td, .table th{
-  border: var(--border);
+  border: var(--border); /* Thin 1px border (matches green lines) */
   padding: 10px 12px;
   vertical-align: middle;
 }
@@ -144,7 +148,7 @@ center h6{
 .table img{
   display: block;
   margin: 6px auto;
-  border: var(--border);
+  border: var(--border); /* Thin border around photo */
   background: #fff;
   padding: 4px;
   width: 110px;
