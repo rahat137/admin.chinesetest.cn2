@@ -1,23 +1,25 @@
 /* =========================
-   CLEAN FINAL style.css
-   (consistent thin borders)
+   FINAL FIX: Forced Thin Borders
+   (overrides ALL framework/default styles)
    ========================= */
 
+/* Reset ALL elements to thin borders (highest priority) */
 * { 
   box-sizing: border-box; 
-  /* Reset any accidental thick borders on all elements */
-  border-width: var(--border-w) !important;
+  border-width: 1px !important; /* FORCE 1px thickness */
+  border-color: #e5e5e5 !important; /* Match green line color */
+  border-style: solid !important;
+}
+
+/* Explicitly remove borders where we don’t want them (critical!) */
+body, .well-sm, .well-lg, .table, .table-bordered {
+  border: none !important; /* No outer borders on page/table */
 }
 
 :root{
-  --border-color: #e5e5e5; /* Light, subtle color (matches green lines) */
-  --border-w: 1px; /* Thin line (fixed: ensures NO thick borders) */
-  --border: var(--border-w) solid var(--border-color);
-
   --page-bg: #ffffff;
   --panel-bg: #ffffff;
   --header-bg: #f7f7f7;
-
   --text: #222;
   --muted: #333;
 }
@@ -25,160 +27,156 @@
 body{
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background: var(--page-bg);
+  background: var(--page-bg) !important;
   color: var(--text);
 }
 
-/* Make page use full width like your teacher screenshot */
+/* Full width page */
 .well-sm{
   width: 100%;
-  margin: 0;
-  padding: 18px 20px;   /* small safe padding */
-  border: none; /* Remove extra outer border */
+  margin: 0 !important;
+  padding: 18px 20px !important;
 }
 
 /* Titles */
 center h2{
-  margin: 10px 0 6px;
-  font-size: 26px;      /* bigger (your issue #1) */
-  font-weight: 700;
+  margin: 10px 0 6px !important;
+  font-size: 26px !important;
+  font-weight: 700 !important;
 }
 center h4{
-  margin: 0 0 16px;
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--muted);
+  margin: 0 0 16px !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  color: var(--muted) !important;
 }
 center h6{
-  margin: 12px 0 6px;
-  font-size: 12px;
-  color: var(--muted);
-  font-weight: 600;
+  margin: 12px 0 6px !important;
+  font-size: 12px !important;
+  color: var(--muted) !important;
+  font-weight: 600 !important;
 }
 
-/* Panels / Boxes */
+/* Panels (thin 1px border ONLY) */
 .panel{
-  width: 100%;
-  background: var(--panel-bg);
-  border: var(--border); /* Thin border (matches green lines) */
-  border-radius: 6px;
-  margin: 0 0 16px 0;
-  box-shadow: none;
-  overflow: hidden; /* Prevent border overflow */
+  width: 100% !important;
+  background: var(--panel-bg) !important;
+  border: 1px solid #e5e5e5 !important; /* Explicit thin border */
+  border-radius: 6px !important;
+  margin: 0 0 16px 0 !important;
+  box-shadow: none !important;
+  overflow: hidden !important;
 }
 
 .panel-default{
-  border: var(--border); /* Consistent thin border */
+  border: 1px solid #e5e5e5 !important; /* Match panel border */
 }
 
-/* Remove gray inside background (prevents “double border” look) */
+/* Inner panel padding (no extra border) */
 .well-lg{
-  padding: 14px;
-  background: var(--panel-bg);
-  border: none; /* No extra inner border */
+  padding: 14px !important;
+  background: var(--panel-bg) !important;
 }
 
-/* Inner panels */
+/* Inner panels (thin border) */
 .panel .panel{
-  border: var(--border); /* Thin inner panel border */
-  border-radius: 6px;
-  background: var(--panel-bg);
-  margin: 0 0 16px 0;
-  overflow: hidden; /* keeps corners clean */
+  border: 1px solid #e5e5e5 !important;
+  border-radius: 6px !important;
+  background: var(--panel-bg) !important;
+  margin: 0 0 16px 0 !important;
+  overflow: hidden !important;
 }
 
-/* Panel header bar */
+/* Panel header (thin bottom border) */
 .panel-body{
-  padding: 10px 12px;
-  font-size: 13px;
-  font-weight: 500;
-  color: #444;
-  background: var(--panel-bg);
-  border-bottom: var(--border); /* Thin bottom border */
+  padding: 10px 12px !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  color: #444 !important;
+  background: var(--panel-bg) !important;
+  border-bottom: 1px solid #e5e5e5 !important; /* Thin bottom border */
 }
 
-/* Tables */
+/* Tables (critical: collapse borders to avoid thickness) */
 .table{
-  width: 100%;
-  border-collapse: collapse;   /* Critical: merges borders to avoid thickness */
-  background: var(--panel-bg);
-  margin: 0;
-  font-size: 13px;
-  border: none; /* No outer table border */
+  width: 100% !important;
+  border-collapse: collapse !important; /* Merge adjacent borders */
+  background: var(--panel-bg) !important;
+  margin: 0 !important;
+  font-size: 13px !important;
+  border: none !important; /* No outer table border */
 }
 
-.table-bordered{
-  border: none; /* Prevent extra outer border */
-}
-
+/* Table cells (ONLY 1px thin border) */
 .table td, .table th{
-  border: var(--border); /* Thin 1px border (matches green lines) */
-  padding: 10px 12px;
-  vertical-align: middle;
+  border: 1px solid #e5e5e5 !important; /* Explicit thin border */
+  padding: 10px 12px !important;
+  vertical-align: middle !important;
 }
 
-/* Header rows */
+/* Table header */
 .table thead th{
-  background: var(--header-bg);
-  font-weight: 700;
+  background: var(--header-bg) !important;
+  font-weight: 700 !important;
 }
 
 /* Left label cells */
 .active{
-  background: var(--header-bg);
-  font-weight: 500;
-  color: #333;
+  background: var(--header-bg) !important;
+  font-weight: 500 !important;
+  color: #333 !important;
 }
 
-/* Alignment helper */
-.text-right{ text-align: right; }
+/* Alignment */
+.text-right{ text-align: right !important; }
 
-/* Keep label column stable */
+/* Label column width */
 .table td.active.text-right{
-  width: 260px;
-  white-space: nowrap;
+  width: 260px !important;
+  white-space: nowrap !important;
 }
 
 /* Photo cell */
 .table td[rowspan]{
-  width: 140px;
-  text-align: center;
+  width: 140px !important;
+  text-align: center !important;
 }
 
+/* Photo styling (thin border) */
 .table img{
-  display: block;
-  margin: 6px auto;
-  border: var(--border); /* Thin border around photo */
-  background: #fff;
-  padding: 4px;
-  width: 110px;
-  height: auto;
+  display: block !important;
+  margin: 6px auto !important;
+  border: 1px solid #e5e5e5 !important; /* Thin photo border */
+  background: #fff !important;
+  padding: 4px !important;
+  width: 110px !important;
+  height: auto !important;
 }
 
-/* ===== Mobile responsive ===== */
+/* Mobile responsiveness */
 @media (max-width: 768px){
   .well-sm{
-    padding: 10px 10px;
+    padding: 10px 10px !important;
   }
 
-  center h2{ font-size: 20px; }
-  center h4{ font-size: 13px; }
+  center h2{ font-size: 20px !important; }
+  center h4{ font-size: 13px !important; }
 
   .table td, .table th{
-    padding: 8px 8px;
-    font-size: 12.5px;
+    padding: 8px 8px !important;
+    font-size: 12.5px !important;
   }
 
   .table td.active.text-right{
-    width: 42%;
-    white-space: normal;
+    width: 42% !important;
+    white-space: normal !important;
   }
 
   .table td[rowspan]{
-    width: 110px;
+    width: 110px !important;
   }
 
   .table img{
-    width: 95px;
+    width: 95px !important;
   }
 }
