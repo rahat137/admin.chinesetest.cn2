@@ -1,201 +1,162 @@
-:root{
-  --bg:#f3f5f7;
-  --card:#ffffff;
-  --border:#dcdcdc;
-  --text:#222;
-  --muted:#666;
+/* ===== Base ===== */
+* {
+  box-sizing: border-box;
 }
 
-*{ box-sizing:border-box; }
-
-body{
-  margin:0;
+body {
   font-family: Arial, Helvetica, sans-serif;
-  background: var(--bg);
-  color:var(--text);
+  background: #f5f6f7;
+  color: #333;
+  margin: 0;
+  padding: 0;
 }
 
-.page{
-  max-width: 4000px;
-  margin: 18px auto;
-  padding: 0 14px;
+/* ===== Page Container ===== */
+.well-sm {
+  max-width: 1100px;
+  margin: 24px auto;
+  padding: 12px;
 }
 
-.header{
-  text-align:center;
-  margin: 10px 0 10px;
-}
-
-.header h1{
-  margin:0;
-  font-size: 18px;
+/* ===== Titles ===== */
+h2 {
+  margin: 10px 0 4px;
+  font-size: 22px;
   font-weight: 700;
 }
 
-.sub{
-  margin: 4px 0 0;
-  font-size: 12px;
-  color: var(--muted);
+h4 {
+  margin: 0 0 18px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #666;
 }
 
-.panel{
-  background: var(--panel);
-  border: 1px solid var(--border);
+h6 {
+  margin: 18px 0 6px;
+  font-size: 12px;
+  color: #666;
+}
+
+/* ===== Panels ===== */
+.panel {
+  background: #fff;
+  border: 1px solid #ddd;
   border-radius: 4px;
-  padding: 10px;
+  margin-bottom: 16px;
 }
 
-.panel-title{
-  font-size: 12px;
-  color: var(--muted);
-  padding: 6px 8px 10px;
+.panel-default {
+  border-color: #ddd;
 }
 
-/* DESKTOP LAYOUT */
-.top-grid{
-  display:flex;
-  width:100%;
-  border: 1px solid var(--border);
-  background:#fff;
+.panel-body {
+  padding: 10px 12px;
+  font-size: 14px;
+  font-weight: 700;
+  background: #f7f7f7;
+  border-bottom: 1px solid #ddd;
 }
 
-.left{ flex:1; }
-
-.right{
-  width: 160px;
-  border-left: 1px solid var(--border);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding: 10px;
+/* ===== Inner spacing ===== */
+.well-lg {
+  padding: 12px;
 }
 
-/* TABLE STYLE */
-.info-table{
-  width:100%;
+/* ===== Tables ===== */
+.table {
+  width: 100%;
   border-collapse: collapse;
-  font-size: 12px;
+  background: #fff;
 }
 
-.info-table th,
-.info-table td{
-  border-top: 1px solid var(--border);
-  padding: 7px 10px;
+.table th,
+.table td {
+  border: 1px solid #ddd;
+  padding: 8px 10px;
+  font-size: 14px;
   vertical-align: middle;
 }
 
-.info-table tr:first-child th,
-.info-table tr:first-child td{
-  border-top: 1px solid var(--border);
-}
-
-.info-table th{
-  width: 280px;
-  font-weight: normal;
-  color:#444;
-  text-align: right;
-  background:#fafafa;
-  border-right: 1px solid var(--border);
-}
-
-.info-table td{
-  color:#222;
-}
-
-/* SECTION LABEL */
-.divider-label{
-  padding: 6px 10px;
-  font-size: 12px;
-  color:#444;
-  border-top: 1px solid var(--border);
-  background:#fafafa;
-}
-
-/* PHOTO */
-.photo-box{
-  width: 120px;
-  height: 150px;
-  border: 1px solid var(--border);
-  background:#fff;
-  overflow:hidden;
-}
-
-.photo-box img{
-  width:100%;
-  height:100%;
-  object-fit: cover;
-}
-
-.section-gap{ height: 16px; }
-
-/* SCORE */
-.score-title{
-  font-size: 12px;
-  color:#444;
-  padding: 6px 10px;
-  border: 1px solid var(--border);
-  border-bottom: none;
-  background:#fafafa;
-}
-
-.score-table{
-  width:100%;
-  border-collapse: collapse;
-  font-size: 12px;
-  border: 1px solid var(--border);
-  background:#fff;
-}
-
-.score-table th,
-.score-table td{
-  border-top: 1px solid var(--border);
-  padding: 10px;
-  text-align:center;
-}
-
-.score-table tr:first-child th{
-  border-top: none;
-  background:#fafafa;
+.table th {
+  background: #f5f5f5;
   font-weight: 700;
 }
 
-.bold{ font-weight: 700; }
-
-/* FOOTER */
-.footer{
-  text-align:center;
-  padding: 14px 0 6px;
-}
-.small-note{
-  font-size: 11px;
-  color: #999;
+.table thead th {
+  background: #f0f0f0;
 }
 
-/* ===== MOBILE (phone-like view) ===== */
-@media (max-width: 560px){
-  .page{ padding: 0 10px; }
-  .panel{ padding: 10px; }
+.table-bordered {
+  border: 1px solid #ddd;
+}
 
-  .top-grid{
-    flex-direction: column;
-    border: 1px solid var(--border);
+/* Left labels */
+.active {
+  background: #f7f7f7;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* Alignment helpers */
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* ===== Photo ===== */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ddd;
+}
+
+/* Fix photo cell width like CTI */
+td[rowspan] {
+  width: 120px;
+  text-align: center;
+}
+
+/* ===== Section spacing ===== */
+.panel + .panel {
+  margin-top: 14px;
+}
+
+/* ===== Footer ===== */
+center h6 {
+  text-align: center;
+}
+
+/* ===== Responsive (Mobile) ===== */
+@media (max-width: 768px) {
+  .well-sm {
+    margin: 0;
+    padding: 8px;
   }
 
-  .right{
-    width: 100%;
-    border-left: none;
-    border-top: 1px solid var(--border);
-    padding: 12px;
+  h2 {
+    font-size: 18px;
   }
 
-  .photo-box{
-    width: 110px;
-    height: 135px;
+  h4 {
+    font-size: 13px;
   }
 
-  /* Make label column narrower for phone */
-  .info-table th{
-    width: 45%;
-    text-align: left;
+  .panel-body {
+    font-size: 13px;
+  }
+
+  .table th,
+  .table td {
+    font-size: 13px;
+    padding: 6px 8px;
+  }
+
+  td[rowspan] {
+    width: 100px;
   }
 }
