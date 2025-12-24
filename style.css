@@ -54,16 +54,17 @@ center h6{
 }
 
 /* ===== Panels / Boxes (Fix box size + consistent borders) ===== */
+
 .panel{
   width: 100%;
   background: var(--panel-bg);
-  border: var(--border);
+  border: var(--border);        /* ✅ thin */
   border-radius: 4px;
   margin: 0 0 16px 0;
 }
 
 .panel-default{
-  border: var(--border);
+  border: var(--border);        /* ✅ thin */
 }
 
 /* the inside padding area */
@@ -74,7 +75,7 @@ center h6{
 
 /* inner panels */
 .panel .panel{
-  border: var(--border);
+  border: var(--border);        /* ✅ thin */
   border-radius: 4px;
   background: var(--panel-bg);
   margin: 0 0 16px 0;
@@ -88,7 +89,7 @@ center h6{
   font-weight: 500;
   color: #444;
   background: var(--panel-bg);
-  border-bottom: var(--border);
+  border-bottom: var(--border); /* ✅ thin */
 }
 
 /* ===== Tables (Fix thick/thin borders + middle divider issue) ===== */
