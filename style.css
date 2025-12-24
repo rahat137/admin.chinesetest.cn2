@@ -1,5 +1,4 @@
 :root{
-  --bg:#ffffff;
   --panel:#ffffff;
   --border:#e6e6e6;
   --text:#222;
@@ -51,15 +50,15 @@ body{
   padding: 6px 8px 10px;
 }
 
+/* DESKTOP LAYOUT */
 .top-grid{
   display:flex;
   width:100%;
   border: 1px solid var(--border);
+  background:#fff;
 }
 
-.left{
-  flex:1;
-}
+.left{ flex:1; }
 
 .right{
   width: 160px;
@@ -70,6 +69,7 @@ body{
   padding: 10px;
 }
 
+/* TABLE STYLE */
 .info-table{
   width:100%;
   border-collapse: collapse;
@@ -79,7 +79,6 @@ body{
 .info-table th,
 .info-table td{
   border-top: 1px solid var(--border);
-  border-right: 1px solid var(--border);
   padding: 7px 10px;
   vertical-align: middle;
 }
@@ -95,13 +94,14 @@ body{
   color:#444;
   text-align: right;
   background:#fafafa;
+  border-right: 1px solid var(--border);
 }
 
 .info-table td{
-  border-right: none;
   color:#222;
 }
 
+/* SECTION LABEL */
 .divider-label{
   padding: 6px 10px;
   font-size: 12px;
@@ -110,6 +110,7 @@ body{
   background:#fafafa;
 }
 
+/* PHOTO */
 .photo-box{
   width: 120px;
   height: 150px;
@@ -124,10 +125,9 @@ body{
   object-fit: cover;
 }
 
-.section-gap{
-  height: 16px;
-}
+.section-gap{ height: 16px; }
 
+/* SCORE */
 .score-title{
   font-size: 12px;
   color:#444;
@@ -142,6 +142,7 @@ body{
   border-collapse: collapse;
   font-size: 12px;
   border: 1px solid var(--border);
+  background:#fff;
 }
 
 .score-table th,
@@ -157,27 +158,43 @@ body{
   font-weight: 700;
 }
 
-.bold{
-  font-weight: 700;
-}
+.bold{ font-weight: 700; }
 
+/* FOOTER */
 .footer{
   text-align:center;
   padding: 14px 0 6px;
 }
-
 .small-note{
   font-size: 11px;
   color: #999;
 }
 
-@media (max-width: 900px){
+/* ===== MOBILE (phone-like view) ===== */
+@media (max-width: 560px){
+  .page{ padding: 0 10px; }
+  .panel{ padding: 10px; }
+
   .top-grid{
     flex-direction: column;
+    border: 1px solid var(--border);
   }
+
   .right{
-    width:100%;
+    width: 100%;
     border-left: none;
     border-top: 1px solid var(--border);
+    padding: 12px;
+  }
+
+  .photo-box{
+    width: 110px;
+    height: 135px;
+  }
+
+  /* Make label column narrower for phone */
+  .info-table th{
+    width: 45%;
+    text-align: left;
   }
 }
