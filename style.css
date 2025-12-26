@@ -148,7 +148,7 @@ center h6{
   margin: 6px auto;
   border: var(--border);
   background: #fff;
-  padding: 4px;
+  padding: 1px;
   width: 115px;   /* consistent size */
   height: auto;
 }
