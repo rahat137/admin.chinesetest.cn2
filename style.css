@@ -150,9 +150,9 @@ center h6{
 .table img{
   display: block;
   width: 133px;               /* SAME as girl box */
-  height: 183px;              /* SAME as girl box */
+  height: 185px;              /* SAME as girl box */
   margin: 0 auto;             /* no top/bottom shift */
-  border: var(--border);
+  border: 0 var(--border);
   background: #fff;
   padding: 1px;               /* same inner frame */
   object-fit: cover;          /* crop correctly */
