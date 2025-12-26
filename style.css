@@ -140,7 +140,7 @@ center h6{
 /* photo cell */
 .table td[rowspan]{
   width: 150px;
-  height: 206px;
+  height: 207px;
   padding: 0 ;              /* equal spacing on all sides */
   text-align: center;
   vertical-align: middle;
@@ -149,8 +149,8 @@ center h6{
 /* photo image */
 .table img{
   display: block;
-  width: 133px;               /* SAME as girl box */
-  height: 185px;              /* SAME as girl box */
+  width: 134px;               /* SAME as girl box */
+  height: 188px;              /* SAME as girl box */
   margin: 0 auto;             /* no top/bottom shift */
   border: 0 var(--border);
   background: #fff;
