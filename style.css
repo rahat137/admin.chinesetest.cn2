@@ -137,20 +137,24 @@ center h6{
   white-space: nowrap;
 }
 
-/* Photo cell */
+/* photo cell */
 .table td[rowspan]{
   width: 150px;
+  padding: 12px;              /* equal spacing on all sides */
   text-align: center;
+  vertical-align: middle;
 }
 
+/* photo image */
 .table img{
   display: block;
-  margin: 6px auto;
+  width: 120px;               /* SAME as girl box */
+  height: 150px;              /* SAME as girl box */
+  margin: 0 auto;             /* no top/bottom shift */
   border: var(--border);
   background: #fff;
-  padding: 1px;
-  width: 115px;   /* consistent size */
-  height: auto;
+  padding: 4px;               /* same inner frame */
+  object-fit: cover;          /* crop correctly */
 }
 
 /* ===== Special row: 考试信息 (if it’s a full-width divider row) ===== */
