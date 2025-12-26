@@ -148,8 +148,8 @@ center h6{
 /* photo image */
 .table img{
   display: block;
-  width: 125px;               /* SAME as girl box */
-  height: 160px;              /* SAME as girl box */
+  width: 130px;               /* SAME as girl box */
+  height: 180px;              /* SAME as girl box */
   margin: 0 auto;             /* no top/bottom shift */
   border: var(--border);
   background: #fff;
