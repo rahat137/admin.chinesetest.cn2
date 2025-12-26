@@ -140,6 +140,7 @@ center h6{
 /* photo cell */
 .table td[rowspan]{
   width: 150px;
+  height: 277px;
   padding: 0 ;              /* equal spacing on all sides */
   text-align: center;
   vertical-align: middle;
