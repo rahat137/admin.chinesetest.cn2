@@ -139,8 +139,8 @@ center h6{
 
 /* photo cell */
 .table td[rowspan]{
-  width: 140px;
-  padding: 1px;              /* equal spacing on all sides */
+  width: 142px;
+  padding: 0 ;              /* equal spacing on all sides */
   text-align: center;
   vertical-align: middle;
 }
@@ -148,12 +148,12 @@ center h6{
 /* photo image */
 .table img{
   display: block;
-  width: 120px;               /* SAME as girl box */
-  height: 160px;              /* SAME as girl box */
+  width: 125px;               /* SAME as girl box */
+  height: 260px;              /* SAME as girl box */
   margin: 0 auto;             /* no top/bottom shift */
   border: var(--border);
   background: #fff;
-  padding: 1px;               /* same inner frame */
+  padding: 0;               /* same inner frame */
   object-fit: cover;          /* crop correctly */
 }
 
