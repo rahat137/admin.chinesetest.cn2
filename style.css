@@ -85,8 +85,8 @@ center h6{
 /* panel header bar text */
 .panel-body{
   padding: 10px 12px;
-  font-size: 13px;
-  font-weight: 500;
+  font-size: 15.5px;
+  font-weight: 400;
   color: #444;
   background: var(--panel-bg);
   border-bottom: 1px solid var(--border);
@@ -99,7 +99,7 @@ center h6{
   table-layout: fixed;    /* IMPORTANT: prevents weird column gaps */
   background: var(--panel-bg);
   margin: 0;
-  font-size: 13px;
+  font-size: 17px;
 }
 
 .table-bordered{
@@ -119,7 +119,7 @@ center h6{
 /* header row (听力/阅读/写作/Total Score etc.) */
 .table thead th{
   background: var(--header-bg);
-  font-weight: 700;
+  font-weight: 650;
 }
 
 /* left label cells */
