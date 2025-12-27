@@ -167,32 +167,40 @@ center h6{
   color: #333;
 }
 
-/* ===== Mobile responsive ===== */
+/* =========================
+   MOBILE FIX (this is the key)
+   ========================= */
 @media (max-width: 768px){
-  .well-sm{
-    padding: 10px;
-  }
+
+  .well-sm{ padding: 10px; }
+  .well-lg{ padding: 10px; }
 
   center h2{ font-size: 20px; }
   center h4{ font-size: 13px; }
 
-  .well-lg{ padding: 10px; }
-
-  .table td, .table th{
-    padding: 8px 8px;
+  /* ✅ Fix mobile broken layout */
+  .table{
+    table-layout: auto;      /* allow natural column sizing */
     font-size: 12.5px;
   }
 
+  /* ✅ Prevent vertical text like D O A N ... */
+  .table td, .table th{
+    padding: 8px 8px;
+    word-break: normal;        /* don't break letters */
+    overflow-wrap: break-word; /* break only when needed */
+  }
+
+  /* ✅ label column normal on mobile */
   .table td.active.text-right{
-    width: 42%;
+    width: 45%;
     white-space: normal;
   }
 
-  .table td[rowspan]{
-    width: 120px;
-  }
-
+  /* ✅ photo column stable */
+  .table td[rowspan]{ width: 110px; }
   .table img{
     width: 95px;
+    height: 135px;
   }
 }
