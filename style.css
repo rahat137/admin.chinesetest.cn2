@@ -112,8 +112,8 @@ center h6{
   border: var(--border);  /* SAME border everywhere */
   padding: 10px 12px;
   vertical-align: middle;
-  word-wrap: break-word;
-  overflow-wrap: anywhere;
+ word-break: normal;
+ overflow-wrap: break-word;
 }
 
 /* header row (听力/阅读/写作/Total Score etc.) */
@@ -133,14 +133,14 @@ center h6{
 
 /* Make label column width stable */
 .table td.active.text-right{
-  width: 738px;
+  width: 260px;
   white-space: nowrap;
 }
 
 /* photo cell */
 .table td[rowspan]{
   width: 150px;
-  height: 207px;
+  height: 0px;
   padding: 0 ;              /* equal spacing on all sides */
   text-align: center;
   vertical-align: middle;
@@ -150,7 +150,7 @@ center h6{
 .table img{
   display: block;
   width: 134px;               /* SAME as girl box */
-  height: 197.2px;              /* SAME as girl box */
+  height: 197px;              /* SAME as girl box */
   margin: 0 auto;             /* no top/bottom shift */
   border: 0 var(--border);
   background: #fff;
