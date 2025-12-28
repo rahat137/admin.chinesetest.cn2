@@ -133,7 +133,7 @@ center h6{
 
 /* Make label column width stable */
 .table td.active.text-right{
-  width: 380px;
+  width: 340px;
   white-space: nowrap;
 }
 
