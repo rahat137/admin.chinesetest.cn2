@@ -170,7 +170,7 @@ center h6{
 /* =========================
    MOBILE FIX (this is the key)
    ========================= */
-@media (max-width: 468px){
+@media (max-width: 440px){
 
   .well-sm{ padding: 10px; }
   .well-lg{ padding: 10px; }
