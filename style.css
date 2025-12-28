@@ -133,7 +133,7 @@ center h6{
 
 /* Make label column width stable */
 .table td.active.text-right{
-  width: 360px;
+  width: 400px;
   white-space: nowrap;
 }
 
@@ -170,7 +170,7 @@ center h6{
 /* =========================
    MOBILE FIX (this is the key)
    ========================= */
-@media (max-width: 768px){
+@media (max-width: 468px){
 
   .well-sm{ padding: 10px; }
   .well-lg{ padding: 10px; }
